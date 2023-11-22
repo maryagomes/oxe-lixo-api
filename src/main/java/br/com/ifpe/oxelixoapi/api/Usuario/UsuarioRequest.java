@@ -22,30 +22,18 @@ public class UsuarioRequest {
     
    @JsonFormat(pattern = "dd/MM/yyyy")
    private LocalDate dataNascimento;
-   
-   private String cpf;
-   
-   private String foneCelular;
-   
+     
    private String email;
 
-   private String sexo;
-
    private String senha;
-
-   private String endereco;
-
+ 
    public Usuario build() {
 
        return Usuario.builder()
                .nome(nome)
-               .dataNascimento(dataNascimento)
-               .cpf(cpf)
-               .sexo(sexo)
-               .foneCelular(foneCelular)
+               .dataNascimento(dataNascimento)           
                .email(email)
-               .senha(senha)
-               .endereco(endereco)
+               .senha(senha)             
                .build();
    }
 }

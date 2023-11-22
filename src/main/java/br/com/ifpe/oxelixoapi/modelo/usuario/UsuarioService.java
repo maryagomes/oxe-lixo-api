@@ -38,12 +38,9 @@ public class UsuarioService {
  
        Usuario usuario = repository.findById(id).get();
        usuario.setNome(usuarioAlterado.getNome());
-       usuario.setDataNascimento(usuarioAlterado.getDataNascimento());
-       usuario.setCpf(usuarioAlterado.getCpf());
-       usuario.setFoneCelular(usuarioAlterado.getFoneCelular());
-       usuario.setSexo(usuarioAlterado.getSexo());
+       usuario.setDataNascimento(usuarioAlterado.getDataNascimento());     
        usuario.setSenha(usuarioAlterado.getSenha());
-       usuario.setEndereco(usuarioAlterado.getEndereco());
+      
 
        
        usuario.setVersao(usuario.getVersao() + 1);

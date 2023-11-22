@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import org.hibernate.annotations.Where;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import br.com.ifpe.oxelixoapi.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,26 +29,15 @@ public class Usuario extends EntidadeAuditavel{
    
    @Column
    private String nome;
-    
-   @Column
-   private LocalDate dataNascimento;
-   
-   @Column
-   private String cpf;
-   
-   @Column
-   private String foneCelular;
-   
+      
    @Column
    private String email;
-   
-   @Column
-   private String sexo;
-
+    
    @Column
    private String senha;
 
    @Column
-   private String endereco;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+   private LocalDate dataNascimento;
 
 }
