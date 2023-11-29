@@ -2,6 +2,8 @@ package br.com.ifpe.oxelixoapi.api.Usuario;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +33,7 @@ public class UsuarioController {
     
     //@ApiOperation(value = "Serviço responsável por salvar um cliente no sistema.")
     @PostMapping
-    public ResponseEntity<Usuario> save(@RequestBody UsuarioRequest request) {
+    public ResponseEntity<Usuario> save(@RequestBody @Valid UsuarioRequest request) {
  
         Usuario usuario = usuarioService.save(request.build());
         return new ResponseEntity<Usuario>(usuario, HttpStatus.CREATED);

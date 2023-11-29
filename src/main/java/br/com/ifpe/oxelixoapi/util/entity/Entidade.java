@@ -18,7 +18,6 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode(of = { "id" })
 @MappedSuperclass
-
 public abstract class Entidade implements Serializable {
     
     @Id
